@@ -1,0 +1,38 @@
+{
+    "name": "softonic/laravel-request-accept-json-middleware",
+    "type": "library",
+    "description": "Laravel middleware to add accept application/json to requests",
+    "keywords": ["json", "request", "middleware", "laravel"],
+    "license": "Apache-2.0",
+    "homepage": "https://github.com/softonic/laravel-request-accept-json-middleware",
+    "support": {
+        "issues": "https://github.com/softonic/laravel-request-accept-json-middleware/issues"
+    },
+    "require": {
+        "php": ">=7.2",
+        "illuminate/http": "^5.8",
+        "illuminate/contracts": "^5.8"
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.2",
+        "phpunit/phpunit": "^8.0",
+        "friendsofphp/php-cs-fixer": "^2.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Softonic\\RequestAcceptJson\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Softonic\\RequestAcceptJson\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "tests": "phpunit --coverage-text; php-cs-fixer fix -v --diff --dry-run --allow-risky=yes;",
+        "phpunit": "phpunit --coverage-text",
+        "phpcs": "php-cs-fixer fix -v --diff --dry-run --allow-risky=yes;",
+        "fix-cs": "php-cs-fixer fix -v --diff --allow-risky=yes;"
+    }
+}
+
