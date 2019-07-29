@@ -1,7 +1,7 @@
 {
     "name": "softonic/laravel-request-accept-json-middleware",
     "type": "library",
-    "description": "Laravel middleware to add accept application/json to requests",
+    "description": "Laravel middleware to add Accept application/json header to requests",
     "keywords": ["json", "request", "middleware", "laravel"],
     "license": "Apache-2.0",
     "homepage": "https://github.com/softonic/laravel-request-accept-json-middleware",
