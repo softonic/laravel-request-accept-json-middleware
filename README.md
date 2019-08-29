@@ -8,7 +8,7 @@ Laravel request accept json middleware
 [![Quality Score](https://img.shields.io/scrutinizer/g/softonic/laravel-request-accept-json-middleware.svg?style=flat-square)](https://scrutinizer-ci.com/g/softonic/laravel-request-accept-json-middleware)
 [![Total Downloads](https://img.shields.io/packagist/dt/softonic/laravel-request-accept-json-middleware.svg?style=flat-square)](https://packagist.org/packages/softonic/laravel-request-accept-json-middleware)
 
-This middleware adds the ability to automatically add the Accept application/json header to every request
+This middleware adds the ability to automatically add the Accept application/json header to every request if it was not provided.
 
 Installation
 -------
