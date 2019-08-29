@@ -8,7 +8,10 @@ use Softonic\RequestAcceptJson\Middleware\RequestAcceptJson;
 
 class RequestAcceptJsonTest extends TestCase
 {
-    public function testHandle()
+    /**
+     * @test
+     */
+    public function whenItDoesNotReceiveAnAcceptHeaderItShouldSetToApplicationJson()
     {
         $mockRequest = $this->getRequest();
         $middleware  = new RequestAcceptJson();
@@ -22,8 +25,31 @@ class RequestAcceptJsonTest extends TestCase
         $this->assertSame('application/json', $result->header('Accept'));
     }
 
-    private function getRequest()
+    /**
+     * @test
+     */
+    public function whenReceiveAnAcceptHeaderItShouldNotModifyIt()
     {
-        return new Request([], [], [], [], [], [], '');
+        $mockRequest = $this->getRequest(['Accept' => 'text/csv']);
+        $middleware  = new RequestAcceptJson();
+
+        $result = $middleware->handle(
+            $mockRequest,
+            function ($request) {
+                return $request;
+            }
+        );
+        $this->assertSame('text/csv', $result->header('Accept'));
+    }
+
+    private function getRequest($headers = [])
+    {
+        $request = new Request([], [], [], [], [], [], '');
+
+        foreach ($headers as $name => $value) {
+            $request->headers->set($name, $value);
+        }
+
+        return $request;
     }
 }
