@@ -7,6 +7,8 @@ Laravel request accept json middleware
 [![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/softonic/laravel-request-accept-json-middleware.svg?style=flat-square)](https://scrutinizer-ci.com/g/softonic/laravel-request-accept-json-middleware/code-structure)
 [![Quality Score](https://img.shields.io/scrutinizer/g/softonic/laravel-request-accept-json-middleware.svg?style=flat-square)](https://scrutinizer-ci.com/g/softonic/laravel-request-accept-json-middleware)
 [![Total Downloads](https://img.shields.io/packagist/dt/softonic/laravel-request-accept-json-middleware.svg?style=flat-square)](https://packagist.org/packages/softonic/laravel-request-accept-json-middleware)
+[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/softonic/laravel-request-accept-json-middleware.svg?style=flat-square)](http://isitmaintained.com/project/softonic/guzzle-oauth2-middleware "Average time to resolve an issue")
+[![Percentage of issues still open](http://isitmaintained.com/badge/open/softonic/laravel-request-accept-json-middleware.svg?style=flat-square)](http://isitmaintained.com/project/softonic/guzzle-oauth2-middleware "Percentage of issues still open")
 
 This middleware adds the ability to automatically add the Accept application/json header to every request if it was not provided.
 
