@@ -44,12 +44,7 @@ Testing
 To run the tests, run the following command from the project folder.
 
 ``` bash
-$ docker-compose run tests
-```
-
-To run interactively using [PsySH](http://psysh.org/):
-``` bash
-$ docker-compose run psysh
+$ docker-compose run test
 ```
 
 License
