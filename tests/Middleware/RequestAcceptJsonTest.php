@@ -45,6 +45,23 @@ class RequestAcceptJsonTest extends TestCase
     /**
      * @test
      */
+    public function whenItReceivesApplicationWildcardAcceptHeaderItShouldSetToApplicationJson()
+    {
+        $mockRequest = $this->getRequest(['Accept' => 'application/*']);
+        $middleware  = new RequestAcceptJson();
+
+        $result = $middleware->handle(
+            $mockRequest,
+            function ($request) {
+                return $request;
+            }
+        );
+        $this->assertSame('application/json', $result->header('Accept'));
+    }
+
+    /**
+     * @test
+     */
     public function whenReceiveAnAcceptHeaderItShouldNotModifyIt()
     {
         $mockRequest = $this->getRequest(['Accept' => 'text/csv']);

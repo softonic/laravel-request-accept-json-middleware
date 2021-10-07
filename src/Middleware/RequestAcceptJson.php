@@ -9,7 +9,8 @@ class RequestAcceptJson
 {
     public function handle(Request $request, Closure $next)
     {
-        if (!$request->headers->has('Accept') || $request->headers->get('Accept') == '*/*') {
+        $accept = $request->headers->get('Accept');
+        if ($accept == null || $accept == '*/*' || $accept == 'application/*') {
             $request->headers->set('Accept', 'application/json');
         }
 
