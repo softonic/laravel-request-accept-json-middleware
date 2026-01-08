@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class RequestAcceptJson
 {
-    public function handle(Request $request, Closure $next)
+    public function handle(Request $request, Closure $next): mixed
     {
         $accept = $request->headers->get('Accept');
 
