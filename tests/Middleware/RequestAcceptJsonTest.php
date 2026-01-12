@@ -3,14 +3,13 @@
 namespace Softonic\RequestAcceptJson\Tests\Middleware;
 
 use Illuminate\Http\Request;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Softonic\RequestAcceptJson\Middleware\RequestAcceptJson;
 
 class RequestAcceptJsonTest extends TestCase
 {
-    /**
-     * @test
-     */
+    #[Test]
     public function whenItDoesNotReceiveAnAcceptHeaderItShouldSetToApplicationJson()
     {
         $mockRequest = $this->getRequest();
@@ -25,9 +24,7 @@ class RequestAcceptJsonTest extends TestCase
         $this->assertSame('application/json', $result->header('Accept'));
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function whenItReceivesWildcardAcceptHeaderItShouldSetToApplicationJson()
     {
         $mockRequest = $this->getRequest(['Accept' => '*/*']);
@@ -42,9 +39,7 @@ class RequestAcceptJsonTest extends TestCase
         $this->assertSame('application/json', $result->header('Accept'));
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function whenItReceivesApplicationWildcardAcceptHeaderItShouldSetToApplicationJson()
     {
         $mockRequest = $this->getRequest(['Accept' => 'application/*']);
@@ -59,9 +54,7 @@ class RequestAcceptJsonTest extends TestCase
         $this->assertSame('application/json', $result->header('Accept'));
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function whenReceiveAnAcceptHeaderItShouldNotModifyIt()
     {
         $mockRequest = $this->getRequest(['Accept' => 'text/csv']);
@@ -76,7 +69,7 @@ class RequestAcceptJsonTest extends TestCase
         $this->assertSame('text/csv', $result->header('Accept'));
     }
 
-    private function getRequest($headers = [])
+    private function getRequest(array $headers = []): Request
     {
         $request = new Request([], [], [], [], [], [], '');
 

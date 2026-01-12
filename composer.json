@@ -9,14 +9,15 @@
         "issues": "https://github.com/softonic/laravel-request-accept-json-middleware/issues"
     },
     "require": {
-        "php": ">=8.2",
-        "illuminate/http": "^11.0",
-        "illuminate/contracts": "^11.0"
+        "php": ">=8.5",
+        "illuminate/http": "^12.0",
+        "illuminate/contracts": "^12.0"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.68",
         "mockery/mockery": "^1.2",
-        "phpunit/phpunit": "^9.0"
+        "phpunit/phpunit": "^12.0",
+        "phpstan/phpstan": "^1.8"
     },
     "autoload": {
         "psr-4": {
@@ -29,10 +30,11 @@
         }
     },
     "scripts": {
-        "tests": "phpunit --coverage-text; php-cs-fixer fix -v --diff --dry-run --allow-risky=yes;",
+        "tests": "phpunit --coverage-text; php-cs-fixer fix -v --diff --dry-run --allow-risky=yes; phpstan analyse",
         "phpunit": "phpunit --coverage-text",
         "phpcs": "php-cs-fixer fix -v --diff --dry-run --allow-risky=yes;",
-        "fix-cs": "php-cs-fixer fix -v --diff --allow-risky=yes;"
+        "fix-cs": "php-cs-fixer fix -v --diff --allow-risky=yes;",
+        "phpstan": "phpstan analyse"
     }
 }
 
